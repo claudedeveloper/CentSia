@@ -59,11 +59,12 @@ namespace CentSia
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "816838312410-9k3ou6odrbqvbcki9b40rqotiklppa6f.apps.googleusercontent.com",
+                ClientSecret = "VkfUIZ6A24l6U-3H6cRmhhWt"
+            });
+
         }
     }
 }
