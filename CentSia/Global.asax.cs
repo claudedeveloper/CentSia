@@ -8,6 +8,7 @@ using System.Web.Security;
 using System.Web.SessionState;
 using System.Data.Entity;
 using CentSia.Models;
+using CentSia.Logic;
 
 namespace CentSia
 {
@@ -21,6 +22,28 @@ namespace CentSia
             
             //Initialize product database
             Database.SetInitializer(new ProductDatabaseInitializer());
+
+            // Create the custom role and user.
+            RoleActions roleActions = new RoleActions();
+            roleActions.AddUserAndRole();
+
+             // Add Routes.
+          RegisterCustomRoutes(RouteTable.Routes);
         }
+
+        void RegisterCustomRoutes(RouteCollection routes)
+        {
+          routes.MapPageRoute(
+              "ProductsByCategoryRoute",
+              "Category/{categoryName}",
+              "~/ProductList.aspx"
+          );
+          routes.MapPageRoute(
+              "ProductByNameRoute",
+              "Product/{productName}",
+              "~/ProductDetails.aspx"
+          );
+        }
+        
     }
 }
