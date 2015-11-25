@@ -7,6 +7,8 @@ using System.Data.Entity;
 namespace CentSia.Models
 {
     public class ProductDatabaseInitializer : DropCreateDatabaseIfModelChanges<ProductContext>
+       // DropCreateDatabaseAlways<ProductContext>
+       // DropCreateDatabaseIfModelChanges<ProductContext>
     {
         protected override void Seed(ProductContext context)
         {
