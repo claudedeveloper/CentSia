@@ -28,7 +28,7 @@ namespace CentSia.Admin
         protected void AddProductButton_Click(object sender, EventArgs e)
         {
             Boolean fileOK = false;
-            String path = Server.MapPath("~/Catalog/Images/");
+            String path = Server.MapPath("~/Images/");
             if (ProductImage.HasFile)
             {
                 String fileExtension = System.IO.Path.GetExtension(ProductImage.FileName).ToLower();
@@ -58,7 +58,7 @@ namespace CentSia.Admin
 
                 // Add product data to DB.
                 AddProducts products = new AddProducts();
-                bool addSuccess = products.AddProduct(AddProductName.Text, AddProductDescription.Text,
+                bool addSuccess = products.AddProduct(AddProductName.Text, AddProductAuthor.Text, AddProductDescription.Text,
                     AddProductPrice.Text, DropDownAddCategory.SelectedValue, ProductImage.FileName);
                 if (addSuccess)
                 {

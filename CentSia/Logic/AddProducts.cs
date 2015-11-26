@@ -8,10 +8,11 @@ namespace CentSia.Logic
 {
     public class AddProducts
     {
-        public bool AddProduct(string ProductName, string ProductDesc, string ProductPrice, string ProductCategory, string ProductImagePath)
+        public bool AddProduct(string ProductName, string ProductAuthor, string ProductDesc, string ProductPrice, string ProductCategory, string ProductImagePath)
         {
             var myProduct = new Product();
             myProduct.ProductName = ProductName;
+            myProduct.Author = ProductAuthor;
             myProduct.Description = ProductDesc;
             myProduct.Price = Convert.ToDouble(ProductPrice);
             myProduct.ImagePath = ProductImagePath;

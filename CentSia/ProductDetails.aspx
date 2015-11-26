@@ -16,6 +16,8 @@
                     <td style="vertical-align: top; text-align:left;">
                         <b>Description:</b><br /><%#:Item.Description %>
                         <br />
+                         <b>Author:</b><br /><%#:Item.Author %>
+                        <br />
                         <span><b>Price:</b>&nbsp;<%#: String.Format("{0:c}", Item.Price) %></span>
                         <br />
                         <span><b>Product Number:</b>&nbsp;<%#:Item.ProductID %></span>
